@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Day in One Page — Tuesday 17 November 2026</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1024px; height: 1024px; overflow: hidden;
+    background: #f3ecdf; color: #17140f;
+    font-family: "DejaVu Sans", sans-serif;
+  }
+  .sheet {
+    position: relative; width: 1024px; height: 1024px;
+    padding: 20px 28px 14px 28px; box-sizing: border-box;
+    display: flex; flex-direction: column;
+  }
+  .sheet::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(circle at 14% 18%, rgba(120,100,60,.05), transparent 40%),
+      radial-gradient(circle at 86% 82%, rgba(120,100,60,.05), transparent 38%);
+  }
+  .thick { height: 5px; background: #17140f; flex: none; }
+  .thin  { height: 1px; background: #17140f; opacity: .42; flex: none; }
+  .dbl   { height: 7px; border-top: 3px solid #17140f; border-bottom: 1px solid #17140f; flex: none; }
+
+  .strap {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-size: 11px; letter-spacing: .24em; text-transform: uppercase;
+    padding: 7px 0 6px 0; font-weight: bold; flex: none;
+  }
+  .strap .r { letter-spacing: .15em; font-weight: normal; opacity: .75; }
+
+  .mast { display: flex; align-items: center; gap: 13px; padding: 4px 0 6px 0; flex: none; }
+  .daynum {
+    font-family: "DejaVu Serif", serif; font-weight: bold;
+    font-size: 96px; line-height: .8; color: #b3241c; letter-spacing: -.02em;
+  }
+  .mon { font-family: "DejaVu Serif", serif; font-weight: bold; font-size: 48px; line-height: .95; }
+  .yr { font-size: 12px; letter-spacing: .32em; font-weight: bold; padding-top: 3px; opacity: .78; }
+  .mastright { margin-left: auto; text-align: right; }
+  .weekday { font-size: 19px; letter-spacing: .3em; text-transform: uppercase; font-weight: bold; }
+  .sub { font-size: 9.5px; letter-spacing: .17em; text-transform: uppercase; opacity: .64; padding-top: 4px; }
+
+  .hero { display: flex; gap: 18px; padding-top: 9px; flex: 1 1 auto; min-height: 0; }
+  .hmain { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; }
+  .kicker { font-size: 10px; letter-spacing: .23em; text-transform: uppercase; font-weight: bold; color: #b3241c; }
+  h1 {
+    margin: 2px 0 4px 0; font-family: "DejaVu Serif", serif; font-weight: bold;
+    font-size: 52px; line-height: .97; letter-spacing: 0;
+  }
+  .dek { font-size: 13.5px; line-height: 1.42; }
+  .dek b { font-weight: bold; }
+  .art { margin-top: 8px; flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
+  .frame { flex: 0 0 auto; overflow: hidden; margin-right: 7px; }
+  .frame svg { display: block; width: 100%; height: auto; }
+  .cap { font-size: 9.8px; opacity: .7; padding-top: 4px; letter-spacing: .02em; }
+
+  .side { width: 228px; flex: 0 0 228px; border-left: 1px solid rgba(23,20,15,.45); padding-left: 13px; display: flex; flex-direction: column; }
+  .side .it { padding-bottom: 8px; }
+  .side .it + .it { margin-top: 10px; padding-top: 9px; border-top: 1px solid rgba(23,20,15,.24); }
+  .side .flag { font-size: 8.8px; letter-spacing: .17em; text-transform: uppercase; opacity: .6; }
+  .side h3 { font-family: "DejaVu Serif", serif; font-weight: bold; font-size: 19px; line-height: 1.05; margin: 2px 0 3px 0; }
+  .side p { font-size: 11.2px; line-height: 1.35; margin: 0; }
+  .side p b { font-weight: bold; }
+
+  .band { display: flex; gap: 13px; flex: none; }
+  .card { flex: 1 1 0; min-width: 0; }
+  .card .hd { font-size: 8.8px; letter-spacing: .15em; text-transform: uppercase; font-weight: bold; color: #b3241c; }
+  .card h2 { font-family: "DejaVu Serif", serif; font-weight: bold; font-size: 18px; line-height: 1.08; margin: 3px 0 3px 0; }
+  .card p { font-size: 10.6px; line-height: 1.34; margin: 0; }
+  .card p b { font-weight: bold; }
+  .thumb { height: 28px; display: flex; align-items: center; }
+
+  .also { display: flex; gap: 14px; font-size: 10.3px; line-height: 1.31; }
+  .also > div { flex: 1 1 0; min-width: 0; }
+  .also b { font-weight: bold; }
+  .spacer { flex: 0 0 auto; }
+  .foot { display: flex; justify-content: space-between; font-size: 8.5px; letter-spacing: .18em; text-transform: uppercase; padding: 5px 0 0 0; opacity: .62; flex: none; }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="thick"></div>
+  <div class="strap"><span>The day in one page</span><span class="r">World news &middot; evening edition</span></div>
+  <div class="thin"></div>
+
+  <div class="mast">
+    <div class="daynum">17</div>
+    <div><div class="mon">November</div><div class="yr">2026</div></div>
+    <div class="mastright">
+      <div class="weekday">Tuesday</div>
+      <div class="sub">Eight stories, five continents</div>
+    </div>
+  </div>
+
+  <div class="dbl"></div>
+
+  <div class="hero">
+    <div class="hmain">
+      <div class="kicker">Crimea &middot; Russia&rsquo;s war on Ukraine</div>
+      <h1>Ukraine breaks the Kerch Bridge</h1>
+      <div class="dek">A 227-metre road arch of the bridge linking Russia to occupied Crimea fell into
+      the strait, and the rail line was damaged but reopened the same day. Russia struck Kyiv&rsquo;s two
+      Dnipro bridges and power plants, killing <b>14 people across Ukraine</b> in a day and cutting
+      power to about 700,000 homes.</div>
+      <div class="art">
+        <div class="frame">
+        <svg viewBox="0 0 968 524" width="968" height="524" role="img" aria-label="Elevation of the Kerch bridge at dusk: two arch spans stand intact on either side of a gap; the deck between them has collapsed and lies half-submerged in the strait, with smoke rising from both broken ends.">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ded2bb"/><stop offset=".55" stop-color="#efe7d6"/><stop offset="1" stop-color="#f8f4ea"/></linearGradient>
+            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d6884"/><stop offset="1" stop-color="#12283a"/></linearGradient>
+            <linearGradient id="smkL" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#4d453e" stop-opacity=".8"/><stop offset=".55" stop-color="#5c544c" stop-opacity=".42"/><stop offset="1" stop-color="#6a6158" stop-opacity=".05"/></linearGradient>
+            <linearGradient id="smkR" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#40382f" stop-opacity=".85"/><stop offset=".5" stop-color="#514941" stop-opacity=".45"/><stop offset="1" stop-color="#645b52" stop-opacity=".05"/></linearGradient>
+            <linearGradient id="deckg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a9081"/><stop offset="1" stop-color="#6f665a"/></linearGradient>
+            <linearGradient id="pierg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8b8274"/><stop offset=".45" stop-color="#78705f"/><stop offset="1" stop-color="#5f584b"/></linearGradient>
+          </defs>
+          <rect width="968" height="524" fill="url(#sky)"/>
+
+          <!-- far shore -->
+          <path d="M0 252 L0 238 L34 230 L72 238 L108 234 L142 244 L186 248 L214 252 Z" fill="#c6baa2"/>
+          <path d="M968 252 L968 236 L934 230 L898 240 L866 238 L836 246 L806 252 Z" fill="#bdb199"/>
+
+          <!-- water -->
+          <rect y="252" width="968" height="272" fill="url(#sea)"/>
+          <rect y="252" width="968" height="2.5" fill="#5b839f" opacity=".6"/>
+
+          <!-- approach viaduct, left -->
+          <g>
+            <rect x="0" y="176" width="250" height="16" fill="url(#deckg)"/>
+            <rect x="0" y="170" width="250" height="6" fill="#4d463c"/>
+            <rect x="0" y="192" width="250" height="4" fill="#5c5549"/>
+            <g fill="url(#pierg)">
+              <rect x="24" y="192" width="15" height="70"/><rect x="84" y="192" width="15" height="70"/>
+              <rect x="144" y="192" width="15" height="70"/><rect x="204" y="192" width="15" height="70"/>
+            </g>
+            <g fill="#544d42" opacity=".55"><rect x="20" y="196" width="23" height="5"/><rect x="80" y="196" width="23" height="5"/><rect x="140" y="196" width="23" height="5"/><rect x="200" y="196" width="23" height="5"/></g>
+          </g>
+
+          <!-- LEFT ARCH SPAN: intact -->
+          <g>
+            <rect x="250" y="176" width="180" height="16" fill="url(#deckg)"/>
+            <rect x="250" y="170" width="180" height="6" fill="#4d463c"/>
+            <rect x="250" y="192" width="180" height="4" fill="#5c5549"/>
+            <g stroke="#6b6255" stroke-width="2.2" opacity=".9">
+              <path d="M268 149 V176"/>
+              <path d="M295 119 V176"/>
+              <path d="M322 103 V176"/>
+              <path d="M340 100 V176"/>
+              <path d="M358 103 V176"/>
+              <path d="M385 119 V176"/>
+              <path d="M412 149 V176"/>
+            </g>
+            <path d="M250 176 Q340 24 430 176" fill="none" stroke="#5f5749" stroke-width="15"/>
+            <path d="M250 176 Q340 24 430 176" fill="none" stroke="#948a7b" stroke-width="10"/>
+            <path d="M250 176 Q340 24 430 176" fill="none" stroke="#b0a696" stroke-width="2.5" opacity=".7" transform="translate(0,-3.5)"/>
+            <g fill="url(#pierg)"><rect x="243" y="190" width="17" height="74"/><rect x="420" y="190" width="17" height="74"/></g>
+          </g>
+
+          <!-- RIGHT ARCH SPAN: intact -->
+          <g>
+            <rect x="560" y="176" width="180" height="16" fill="url(#deckg)"/>
+            <rect x="560" y="170" width="180" height="6" fill="#4d463c"/>
+            <rect x="560" y="192" width="180" height="4" fill="#5c5549"/>
+            <g stroke="#6b6255" stroke-width="2.2" opacity=".9">
+              <path d="M578 149 V176"/>
+              <path d="M605 119 V176"/>
+              <path d="M632 103 V176"/>
+              <path d="M650 100 V176"/>
+              <path d="M668 103 V176"/>
+              <path d="M695 119 V176"/>
+              <path d="M722 149 V176"/>
+            </g>
+            <path d="M560 176 Q650 24 740 176" fill="none" stroke="#5f5749" stroke-width="15"/>
+            <path d="M560 176 Q650 24 740 176" fill="none" stroke="#948a7b" stroke-width="10"/>
+            <path d="M560 176 Q650 24 740 176" fill="none" stroke="#b0a696" stroke-width="2.5" opacity=".7" transform="translate(0,-3.5)"/>
+            <g fill="url(#pierg)"><rect x="553" y="190" width="17" height="74"/><rect x="730" y="190" width="17" height="74"/></g>
+          </g>
+
+          <!-- approach viaduct, right -->
+          <g>
+            <rect x="740" y="176" width="228" height="16" fill="url(#deckg)"/>
+            <rect x="740" y="170" width="228" height="6" fill="#4d463c"/>
+            <rect x="740" y="192" width="228" height="4" fill="#5c5549"/>
+            <g fill="url(#pierg)">
+              <rect x="768" y="192" width="15" height="70"/><rect x="828" y="192" width="15" height="70"/>
+              <rect x="888" y="192" width="15" height="70"/><rect x="940" y="192" width="15" height="70"/>
+            </g>
+            <g fill="#544d42" opacity=".55"><rect x="764" y="196" width="23" height="5"/><rect x="824" y="196" width="23" height="5"/><rect x="884" y="196" width="23" height="5"/><rect x="936" y="196" width="23" height="5"/></g>
+          </g>
+
+          <!-- torn deck ends + hanging slab + rebar -->
+          <g>
+            <path d="M424 192 L440 199 L436 214 L418 207 Z" fill="#6b6255"/>
+            <path d="M424 176 L432 180 L430 190 L422 186 Z" fill="#4d463c"/>
+            <g stroke="#4a4338" stroke-width="1.7" fill="none" opacity=".9">
+              <path d="M428 196 q6 12 -3 22"/><path d="M434 199 q9 9 3 19"/><path d="M437 206 q7 5 6 14"/>
+            </g>
+            <path d="M566 192 L550 199 L554 214 L572 207 Z" fill="#6b6255"/>
+            <path d="M566 176 L558 180 L560 190 L568 186 Z" fill="#4d463c"/>
+            <g stroke="#4a4338" stroke-width="1.7" fill="none" opacity=".9">
+              <path d="M562 196 q-6 12 3 22"/><path d="M556 199 q-9 9 -3 19"/><path d="M553 206 q-7 5 -6 14"/>
+            </g>
+          </g>
+
+          <!-- COLLAPSED SPAN lying half-submerged in the gap -->
+          <g>
+            <path d="M430 250 Q496 222 562 252" fill="none" stroke="#5d5548" stroke-width="12"/>
+            <path d="M430 250 Q496 222 562 252" fill="none" stroke="#8a8071" stroke-width="7"/>
+            <path d="M446 254 L520 262 L517 274 L443 266 Z" fill="#6f665a"/>
+            <path d="M446 254 L520 262 L517 274 L443 266 Z" fill="#000" opacity=".18"/>
+            <g stroke="#5a5347" stroke-width="2.4">
+              <path d="M462 244 v16"/><path d="M496 236 v20"/><path d="M530 244 v14"/>
+            </g>
+            <g fill="#7d7467"><rect x="527" y="252" width="9" height="9" transform="rotate(12 531 256)"/><rect x="452" y="258" width="11" height="6" transform="rotate(-8 457 261)"/></g>
+          </g>
+
+          <!-- water occlusion + surface: sunken parts read as submerged -->
+          <rect y="252" width="968" height="272" fill="url(#sea)" opacity=".62"/>
+          <path d="M0 252 H968" stroke="#7ea3bd" stroke-width="2" opacity=".65"/>
+          <g stroke="#8fb2c8" stroke-width="2" opacity=".34">
+            <path d="M432 262 h30"/><path d="M486 268 h34"/><path d="M534 260 h28"/>
+            <path d="M24 282 h48"/><path d="M116 296 h40"/><path d="M212 284 h36"/><path d="M300 306 h44"/>
+            <path d="M392 300 h38"/><path d="M470 316 h46"/><path d="M556 302 h40"/><path d="M636 292 h50"/>
+            <path d="M726 312 h44"/><path d="M818 300 h38"/><path d="M896 288 h44"/>
+            <path d="M60 340 h52"/><path d="M170 356 h44"/><path d="M268 344 h40"/><path d="M358 364 h48"/>
+            <path d="M452 352 h42"/><path d="M544 370 h46"/><path d="M636 348 h40"/><path d="M736 366 h44"/>
+            <path d="M832 352 h46"/><path d="M918 372 h34"/>
+            <path d="M40 396 h48"/><path d="M148 404 h40"/><path d="M252 392 h46"/>
+            <path d="M356 412 h42"/><path d="M452 400 h48"/><path d="M556 418 h44"/>
+            <path d="M660 396 h50"/><path d="M764 414 h42"/><path d="M868 402 h48"/>
+          </g>
+          <g fill="#c9dee9" opacity=".5">
+            <ellipse cx="440" cy="255" rx="16" ry="3.4"/><ellipse cx="470" cy="259" rx="12" ry="3"/>
+            <ellipse cx="520" cy="257" rx="14" ry="3.2"/><ellipse cx="553" cy="254" rx="12" ry="3"/>
+          </g>
+
+          <!-- smoke: two plumes off the broken ends -->
+          <g opacity=".92">
+            <path d="M418 178 C404 150 398 122 396 96 C394 70 400 44 410 20 L446 20 C440 48 446 78 450 106 C454 136 456 158 448 178 Z" fill="url(#smkL)"/>
+            <g fill="#5c544c" opacity=".16">
+              <circle cx="408" cy="146" r="18"/><circle cx="430" cy="128" r="22"/><circle cx="402" cy="104" r="24"/>
+              <circle cx="438" cy="86" r="26"/><circle cx="412" cy="62" r="24"/><circle cx="444" cy="40" r="22"/>
+            </g>
+            <path d="M552 178 C566 150 572 122 574 96 C576 70 570 44 560 20 L526 20 C532 48 526 78 522 106 C518 136 516 158 524 178 Z" fill="url(#smkR)"/>
+            <g fill="#4b433a" opacity=".18">
+              <circle cx="562" cy="148" r="19"/><circle cx="540" cy="130" r="23"/><circle cx="566" cy="106" r="25"/>
+              <circle cx="532" cy="88" r="27"/><circle cx="558" cy="64" r="24"/><circle cx="528" cy="42" r="22"/>
+            </g>
+          </g>
+
+          <!-- fire at the two break points -->
+          <g>
+            <path d="M430 176 q-3 -12 4 -18 q1 8 6 10 q5 -12 12 -6 q-3 8 1 14 Z" fill="#c0562a" opacity=".85"/>
+            <path d="M430 176 q0 -8 4 -12 q2 6 7 7" fill="#e0a247" opacity=".8"/>
+            <path d="M560 176 q3 -12 -4 -18 q-1 8 -6 10 q-5 -12 -12 -6 q3 8 -1 14 Z" fill="#c0562a" opacity=".85"/>
+            <path d="M560 176 q0 -8 -4 -12 q-2 6 -7 7" fill="#e0a247" opacity=".8"/>
+          </g>
+
+          <!-- label + leader -->
+          <g>
+            <path d="M494 404 V286" stroke="#c9dee9" stroke-width="1.6" opacity=".85"/>
+            <circle cx="494" cy="283" r="3" fill="#c9dee9"/>
+            <text x="494" y="428" text-anchor="middle" font-family="DejaVu Sans" font-size="17" font-weight="bold" letter-spacing="3.4" fill="#f2ece0">ROAD SPAN LOST</text>
+            <text x="494" y="447" text-anchor="middle" font-family="DejaVu Sans" font-size="10.5" letter-spacing=".9" fill="#cfe2ec">the 227-metre arch, in the strait</text>
+          </g>
+
+          <!-- scale + note -->
+          <g>
+            <text x="20" y="468" font-family="DejaVu Sans" font-size="9" letter-spacing="1.7" fill="#a8c2d2">KERCH STRAIT &#183; ELEVATION, NOT TO SCALE</text>
+            <path d="M20 482 h72" stroke="#a8c2d2" stroke-width="1.6"/>
+            <path d="M20 477 v10 M56 479 v6 M92 477 v10" stroke="#a8c2d2" stroke-width="1.6"/>
+            <text x="20" y="500" font-family="DejaVu Sans" font-size="7" letter-spacing="1" fill="#a8c2d2">0</text>
+            <text x="86" y="500" font-family="DejaVu Sans" font-size="7" letter-spacing="1" fill="#a8c2d2">200 M</text>
+          </g>
+        </svg>
+        </div>
+        <div class="cap">Two arches of the road bridge stand; the span between them lies in the water. Train traffic resumed on 17 November, road traffic cannot cross.</div>
+      </div>
+    </div>
+
+    <div class="side">
+      <div class="it">
+        <div class="flag">Gulf &middot; Iran</div>
+        <h3>Drones strike Bahrain</h3>
+        <p>Iran&rsquo;s Revolutionary Guards hit a US-run radar at Sheikh Isa air base; Bahrain says it intercepted several. A third US carrier group reached the region. Trump said he was &ldquo;looking into&rdquo; a reported dirty-bomb plot; Tehran calls it fabricated.</p>
+      </div>
+      <div class="it">
+        <div class="flag">Markets &middot; US &amp; China</div>
+        <h3>Chip curbs, then a selloff</h3>
+        <p>Washington put Singapore, Malaysia, Thailand, Indonesia and Brazil under licence for advanced AI chips, closing the cloud route to China. The <b>S&amp;P 500 fell 1.9%</b>, the Nasdaq 2.7%; Nvidia slipped 4.1%.</p>
+      </div>
+      <div class="it">
+        <div class="flag">Climate &middot; COP31, Antalya</div>
+        <h3>Fossil-fuel wording splits the draft</h3>
+        <p>A draft cover decision from the co-hosts urged phasing out fossil fuels and net zero for rich nations by 2030. The EU called the text untenable; oil producers resist. Talks end Friday.</p>
+      </div>
+      <div class="it">
+        <div class="flag">Africa &middot; DR Congo</div>
+        <h3>Ebola outbreak &lsquo;out of control&rsquo;</h3>
+        <p>Six months in, Africa CDC reports more than <b>11,200 cases and 5,500 deaths</b> across eight provinces, with attacks on health workers and no vaccine for the Bundibugyo strain.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="thin" style="margin:9px 0 8px 0"></div>
+
+  <div class="band">
+    <div class="card">
+      <div class="thumb">
+        <svg width="52" height="28" viewBox="0 0 52 28"><g stroke="#2a2622" stroke-width="2.1" fill="none"><circle cx="26" cy="7" r="4.2"/><circle cx="11" cy="21" r="4.2"/><circle cx="41" cy="21" r="4.2"/><path d="M22.8 10.2 l-8.6 7.6 M29.2 10.2 l8.6 7.6 M15.2 21 h21.6"/></g><circle cx="26" cy="7" r="2.1" fill="#b3241c"/><circle cx="11" cy="21" r="2.1" fill="#b3241c"/><circle cx="41" cy="21" r="2.1" fill="#b3241c"/></svg>
+      </div>
+      <div class="hd">Asia &middot; Manila &amp; Shenzhen</div>
+      <h2>Quad meets, a three-way summit set</h2>
+      <p>Trump, Modi, Takaichi and Albanese held the first leaders&rsquo; Quad in two years, on maritime security and critical minerals. Xi, Putin and Trump are confirmed for a first trilateral in Shenzhen on Thursday.</p>
+    </div>
+    <div class="card">
+      <div class="thumb">
+        <svg width="52" height="28" viewBox="0 0 52 28"><g fill="#2a2622"><circle cx="26" cy="8" r="4"/><rect x="14" y="17" width="7" height="10" rx="1"/><rect x="23" y="14" width="6" height="13" rx="1"/><rect x="31" y="19" width="8" height="8" rx="1"/></g><rect x="14" y="17" width="7" height="10" fill="#b3241c" opacity=".85"/></svg>
+      </div>
+      <div class="hd">Africa &middot; South Africa</div>
+      <h2>Two shootings leave 17 dead</h2>
+      <p>Eight men were found shot in a minibus outside Pietermaritzburg; six men and three women were killed in a shack near Pretoria. Police call the attacks unrelated and are hunting the suspects.</p>
+    </div>
+    <div class="card">
+      <div class="thumb">
+        <svg width="52" height="28" viewBox="0 0 52 28"><path d="M3 22 L11 14 L19 19 L28 6 L36 12 L49 2" fill="none" stroke="#b3241c" stroke-width="2.4"/><g fill="#b3241c"><circle cx="11" cy="14" r="2.2"/><circle cx="28" cy="6" r="2.2"/><circle cx="36" cy="12" r="2.2"/></g><path d="M3 26 h46" stroke="#2a2622" stroke-width="1.2" opacity=".45"/></svg>
+      </div>
+      <div class="hd">Economy &middot; United States</div>
+      <h2>Nasdaq drops 2.7% as AI trades unwind</h2>
+      <p>The dollar reached a 19-month high on bets the Fed hikes again in December, and Treasury yields rose for a fourth session. The VIX jumped 18.7%; gold and oil fell.</p>
+    </div>
+  </div>
+
+  <div class="thin" style="margin:8px 0 7px 0"></div>
+
+  <div class="also">
+    <div><b>Japan:</b> fighters scrambled after two Russian aircraft entered airspace near Okinoshima; Tokyo lodged a protest.</div>
+    <div><b>Indonesia:</b> a magnitude 6.6 quake under the Banda Sea was felt widely; no tsunami and no damage reported.</div>
+    <div><b>Philippines:</b> Marcos told ASEAN and East Asia leaders to turn energy and food pledges into deliveries.</div>
+    <div><b>France:</b> new protests called as the presidential election nears; a francophonie leadership vote slipped a year.</div>
+  </div>
+
+  <div class="thick" style="flex:none"></div>
+  <div class="foot"><span>The world on Tuesday 17 November 2026</span><span>Compiled from agency reporting of the day</span></div>
+</div>
+</body>
+</html>
