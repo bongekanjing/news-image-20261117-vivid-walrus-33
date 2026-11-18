@@ -4,216 +4,277 @@
 <meta charset="utf-8">
 <title>The Day in One Page — Tuesday 17 November 2026</title>
 <style>
-  html, body { margin: 0; padding: 0; }
+  @page { size: 1024px 1024px; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1024px; height: 1024px; background: #f3ecdf; }
   body {
-    width: 1024px; height: 1024px; overflow: hidden;
-    background: #f3ecdf; color: #17140f;
     font-family: "DejaVu Sans", sans-serif;
+    color: #17140f;
     -webkit-font-smoothing: antialiased;
   }
   .sheet {
-    position: relative; width: 1024px; height: 1024px;
-    padding: 18px 28px 12px 28px; box-sizing: border-box;
+    width: 1024px; height: 1024px;
+    padding: 16px 26px 10px 26px;
     display: flex; flex-direction: column;
+    background: #f3ecdf;
   }
-  .sheet::before {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background:
-      radial-gradient(circle at 12% 14%, rgba(120,100,60,.05), transparent 38%),
-      radial-gradient(circle at 88% 84%, rgba(120,100,60,.05), transparent 36%);
-  }
-  .thick { height: 5px; background: #17140f; flex: none; }
-  .hair { height: 1px; background: #17140f; opacity: .4; flex: none; }
-  .dbl { height: 7px; border-top: 3px solid #17140f; border-bottom: 1px solid #17140f; flex: none; }
 
-  .strap {
-    display: flex; justify-content: space-between; align-items: baseline;
-    font-size: 10px; letter-spacing: .26em; text-transform: uppercase;
-    padding: 6px 0 5px 0; font-weight: bold; flex: none;
+  /* ---------- top strip ---------- */
+  .strip {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 8.6px; letter-spacing: .18em; text-transform: uppercase;
+    font-weight: bold; padding-bottom: 5px;
   }
-  .strap .r { letter-spacing: .16em; font-weight: normal; opacity: .72; }
+  .strip .dot { color: #a3271c; }
 
-  .mast { display: flex; align-items: flex-end; gap: 12px; padding: 2px 0 5px 0; flex: none; }
+  /* ---------- rules ---------- */
+  .thick { border-top: 5px solid #17140f; }
+  .thin  { border-top: 1px solid rgba(23,20,15,.45); }
+  .dbl   { border-top: 3px solid #17140f; border-bottom: 1px solid #17140f; height: 7px; margin: 3px 0; }
+
+  /* ---------- masthead ---------- */
+  .mast { display: flex; align-items: flex-end; justify-content: space-between; padding: 6px 0 7px 0; }
+  .mast .left { display: flex; align-items: baseline; }
   .daynum {
     font-family: "DejaVu Serif", serif; font-weight: bold;
-    font-size: 84px; line-height: .78; color: #b3241c; letter-spacing: -.03em;
+    font-size: 62px; line-height: .8; color: #a3271c; letter-spacing: -.03em;
   }
-  .mon { font-family: "DejaVu Serif", serif; font-weight: bold; font-size: 42px; line-height: .92; }
-  .yr { font-size: 11px; letter-spacing: .34em; font-weight: bold; padding-top: 2px; opacity: .76; }
-  .mastright { margin-left: auto; text-align: right; padding-bottom: 4px; }
-  .weekday { font-size: 17px; letter-spacing: .32em; text-transform: uppercase; font-weight: bold; }
-  .sub { font-size: 9px; letter-spacing: .18em; text-transform: uppercase; opacity: .62; padding-top: 3px; }
+  .month {
+    font-family: "DejaVu Serif", serif; font-weight: bold;
+    font-size: 47px; line-height: .82; letter-spacing: -.02em; margin-left: 10px;
+    text-transform: uppercase;
+  }
+  .yr { font-size: 12px; font-weight: bold; letter-spacing: .3em; margin-left: 10px; }
+  .mast .right { text-align: right; padding-bottom: 2px; }
+  .mast .right .wd { font-size: 15px; font-weight: bold; letter-spacing: .34em; }
+  .mast .right .cnt { font-size: 8.4px; letter-spacing: .2em; font-weight: bold; margin-top: 3px; }
 
-  .lead { padding-top: 9px; flex: none; }
-  .kick { font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; font-weight: bold; color: #b3241c; }
+  /* ---------- lead ---------- */
+  .kicker {
+    font-size: 9.2px; font-weight: bold; letter-spacing: .22em; text-transform: uppercase;
+    color: #a3271c; padding: 5px 0 4px 0;
+  }
   h1 {
-    margin: 3px 0 5px 0; font-family: "DejaVu Serif", serif; font-weight: bold;
-    font-size: 44px; line-height: 1.0;
+    font-family: "DejaVu Serif", serif; font-weight: bold;
+    font-size: 33px; line-height: 1.03; letter-spacing: -.012em;
+    padding-bottom: 6px;
   }
-  .dek { font-size: 12.6px; line-height: 1.4; }
-  .dek b { font-weight: bold; }
-  .dek .red { color: #b3241c; font-weight: bold; }
+  .deck {
+    font-family: "DejaVu Serif", serif;
+    font-size: 11.8px; line-height: 1.28;
+    column-count: 2; column-gap: 22px;
+    padding-bottom: 7px;
+    text-align: justify;
+  }
+  .deck b { font-weight: bold; }
 
-  .art { margin-top: 7px; flex: none; overflow: hidden; }
-  .art svg { display: block; width: 100%; height: auto; }
-  .cap { font-size: 9.2px; opacity: .68; padding-top: 3px; line-height: 1.3; }
+  /* ---------- hero ---------- */
+  .frame { flex: 0 0 auto; overflow: hidden; }
+  .frame svg { display: block; width: 100%; height: auto; }
+  .cap {
+    font-size: 9.2px; line-height: 1.3; letter-spacing: .02em;
+    padding: 5px 0 6px 0; border-bottom: 1px solid rgba(23,20,15,.45);
+  }
+  .cap b { letter-spacing: .16em; text-transform: uppercase; font-size: 8.4px; }
 
+  /* ---------- briefs ---------- */
   .grid {
     margin-top: 7px; flex: 1 1 auto; min-height: 0;
-    display: grid; grid-template-columns: repeat(5, 1fr);
-    column-gap: 13px; row-gap: 0;
+    column-count: 4; column-gap: 16px; column-fill: balance;
   }
-  .b { padding: 5px 0 4px 0; border-top: 1px solid rgba(23,20,15,.2); min-width: 0; }
-  .tag { font-size: 7.4px; letter-spacing: .15em; text-transform: uppercase; color: #b3241c; font-weight: bold; }
-  .bh { font-family: "DejaVu Serif", serif; font-weight: bold; font-size: 12.4px; line-height: 1.14; padding-top: 2px; }
+  .b { padding: 4.5px 0 4.5px 0; border-top: 1px solid rgba(23,20,15,.2); break-inside: avoid; }
+  .tag {
+    font-size: 8px; font-weight: bold; letter-spacing: .16em; text-transform: uppercase;
+    color: #a3271c;
+  }
+  .bh {
+    font-family: "DejaVu Serif", serif; font-weight: bold;
+    font-size: 14px; line-height: 1.12; padding-top: 2px;
+  }
 
-  .foot-rule { height: 1px; background: #17140f; opacity: .4; margin-top: 5px; flex: none; }
+  /* ---------- footer ---------- */
   .foot {
-    display: flex; justify-content: space-between; align-items: baseline;
-    font-size: 8.2px; letter-spacing: .2em; text-transform: uppercase;
-    padding-top: 5px; opacity: .6; flex: none;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 7.8px; letter-spacing: .16em; text-transform: uppercase; font-weight: bold;
+    padding-top: 5px;
   }
 </style>
 </head>
 <body>
 <div class="sheet">
 
+  <div class="strip">
+    <div><span class="dot">&#9632;</span>&nbsp;&nbsp;THE DAY IN ONE PAGE</div>
+    <div>WORLD NEWS &middot; EVENING EDITION</div>
+  </div>
+
   <div class="thick"></div>
-  <div class="strap"><span>The day in one page</span><span class="r">World news &middot; evening edition</span></div>
-  <div class="hair"></div>
 
   <div class="mast">
-    <div class="daynum">17</div>
-    <div><div class="mon">November</div><div class="yr">2026</div></div>
-    <div class="mastright">
-      <div class="weekday">Tuesday</div>
-      <div class="sub">Thirty stories &middot; six continents</div>
+    <div class="left">
+      <div class="daynum">17</div>
+      <div class="month">November</div>
+      <div class="yr">2026</div>
+    </div>
+    <div class="right">
+      <div class="wd">TUESDAY</div>
+      <div class="cnt">THIRTY-TWO STORIES &middot; SIX CONTINENTS</div>
     </div>
   </div>
 
   <div class="dbl"></div>
 
-  <div class="lead">
-    <div class="kick">Crimea &middot; Russia&rsquo;s war on Ukraine</div>
-    <h1>Ukraine breaks the Kerch Bridge, then presses for air defence</h1>
-    <div class="dek">A 227-metre road arch of the bridge linking Russia to occupied Crimea fell into the
-    strait; the rail line was damaged and reopened the same day. Hours earlier Kyiv had held new talks with
-    Washington and European officials on ending the war. Russia struck the capital&rsquo;s two Dnipro bridges
-    and power plants, killing <b>14 people across Ukraine</b> and cutting power to about
-    <b>700,000 homes</b> &mdash; as Zelensky urged allies to send interceptor deliveries
-    <span class="red">without delay</span>.</div>
+  <div class="kicker">CRIMEA &middot; RUSSIA&rsquo;S WAR ON UKRAINE</div>
+  <h1>Ukraine breaks the Kerch Bridge, then presses for air defence</h1>
+  <div class="deck">
+    A <b>227-metre</b> road span of the bridge linking Russia to occupied Crimea dropped into the Kerch strait on 17 November; the rail line was damaged and reopened the same day. The strike followed talks in Kyiv with Washington and European officials on interceptor supplies. Russia hit the capital&rsquo;s two Dnipro bridges and power plants, killing <b>14 people</b> across Ukraine and cutting power to about <b>700,000 homes</b>. Zelensky told allies the interceptors could not wait: they must arrive <b>without delay</b>.
   </div>
 
-  <div class="art">
-    <svg viewBox="0 0 968 240" width="968" height="240" role="img" aria-label="Elevation of the Kerch bridge: two arch spans stand either side of a gap where the road deck has collapsed into the strait, smoke rising from both broken ends.">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ded2bb"/><stop offset="1" stop-color="#f8f4ea"/></linearGradient>
-        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d6884"/><stop offset="1" stop-color="#12283a"/></linearGradient>
-        <linearGradient id="smk" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#4d453e" stop-opacity=".78"/><stop offset="1" stop-color="#6a6158" stop-opacity=".04"/></linearGradient>
-        <linearGradient id="deck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9a9081"/><stop offset="1" stop-color="#6f665a"/></linearGradient>
-      </defs>
-      <rect width="968" height="240" fill="url(#sky)"/>
-      <path d="M0 132 L0 116 L40 108 L86 118 L128 112 L168 124 L214 130 L214 132 Z" fill="#c6baa2"/>
-      <path d="M968 132 L968 114 L930 108 L890 120 L850 116 L812 126 L772 132 Z" fill="#bdb199"/>
-      <rect y="132" width="968" height="108" fill="url(#sea)"/>
-      <rect y="132" width="968" height="2" fill="#5b839f" opacity=".6"/>
+  <div class="frame">
+<svg viewBox="0 0 972 250" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Labelled diagram of the Kerch road-and-rail bridge on 17 November 2026: the two arch spans stand; the middle road span has fallen and lies broken in the strait, leaving a gap the full width between the arches. Rail traffic resumed the same day; road traffic cannot cross.">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ded2bb"/><stop offset=".6" stop-color="#efe7d6"/><stop offset="1" stop-color="#f6f1e6"/>
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b7288"/><stop offset="1" stop-color="#193244"/>
+    </linearGradient>
+  </defs>
 
-      <!-- approaches -->
-      <g>
-        <rect x="0" y="86" width="250" height="10" fill="url(#deck)"/><rect x="0" y="82" width="250" height="4" fill="#4d463c"/>
-        <g fill="#78705f"><rect x="30" y="96" width="10" height="38"/><rect x="92" y="96" width="10" height="38"/><rect x="154" y="96" width="10" height="38"/><rect x="216" y="96" width="10" height="38"/></g>
-      </g>
-      <!-- arches -->
-      <g>
-        <rect x="250" y="86" width="180" height="10" fill="url(#deck)"/><rect x="250" y="82" width="180" height="4" fill="#4d463c"/>
-        <path d="M250 86 Q340 4 430 86" fill="none" stroke="#5f5749" stroke-width="9"/>
-        <path d="M250 86 Q340 4 430 86" fill="none" stroke="#948a7b" stroke-width="6"/>
-        <g stroke="#6b6255" stroke-width="1.6" opacity=".9"><path d="M272 62 V86"/><path d="M300 36 V86"/><path d="M322 25 V86"/><path d="M340 22 V86"/><path d="M358 25 V86"/><path d="M380 36 V86"/><path d="M408 62 V86"/></g>
-        <g fill="#78705f"><rect x="244" y="94" width="11" height="40"/><rect x="425" y="94" width="11" height="40"/></g>
-      </g>
-      <g>
-        <rect x="560" y="86" width="180" height="10" fill="url(#deck)"/><rect x="560" y="82" width="180" height="4" fill="#4d463c"/>
-        <path d="M560 86 Q650 4 740 86" fill="none" stroke="#5f5749" stroke-width="9"/>
-        <path d="M560 86 Q650 4 740 86" fill="none" stroke="#948a7b" stroke-width="6"/>
-        <g stroke="#6b6255" stroke-width="1.6" opacity=".9"><path d="M582 62 V86"/><path d="M610 36 V86"/><path d="M632 25 V86"/><path d="M650 22 V86"/><path d="M668 25 V86"/><path d="M690 36 V86"/><path d="M718 62 V86"/></g>
-        <g fill="#78705f"><rect x="554" y="94" width="11" height="40"/><rect x="735" y="94" width="11" height="40"/></g>
-      </g>
-      <g>
-        <rect x="740" y="86" width="228" height="10" fill="url(#deck)"/><rect x="740" y="82" width="228" height="4" fill="#4d463c"/>
-        <g fill="#78705f"><rect x="770" y="96" width="10" height="38"/><rect x="832" y="96" width="10" height="38"/><rect x="894" y="96" width="10" height="38"/><rect x="946" y="96" width="10" height="38"/></g>
-      </g>
+  <rect width="972" height="250" fill="url(#sky)"/>
+  <path d="M0 134 L58 120 L104 128 L158 114 L216 130 L270 122 L300 134 Z" fill="#c9bda4" opacity=".8"/>
+  <path d="M690 132 L734 118 L792 128 L854 116 L910 128 L972 120 L972 134 Z" fill="#c9bda4" opacity=".8"/>
 
-      <!-- torn ends + collapsed span in the water -->
-      <g>
-        <path d="M424 96 L438 101 L434 112 L418 106 Z" fill="#6b6255"/>
-        <path d="M566 96 L552 101 L556 112 L572 106 Z" fill="#6b6255"/>
-        <path d="M430 150 Q496 128 562 152" fill="none" stroke="#5d5548" stroke-width="8"/>
-        <path d="M430 150 Q496 128 562 152" fill="none" stroke="#8a8071" stroke-width="4.5"/>
-        <path d="M452 154 L516 160 L514 170 L450 164 Z" fill="#6f665a" opacity=".9"/>
-        <g stroke="#5a5347" stroke-width="1.8"><path d="M470 146 v12"/><path d="M496 140 v14"/><path d="M524 146 v12"/></g>
-      </g>
-      <rect y="132" width="968" height="108" fill="url(#sea)" opacity=".6"/>
-      <path d="M0 132 H968" stroke="#7ea3bd" stroke-width="1.8" opacity=".6"/>
-      <g stroke="#8fb2c8" stroke-width="1.6" opacity=".32">
-        <path d="M444 146 h26"/><path d="M496 152 h30"/><path d="M538 144 h24"/>
-        <path d="M30 168 h48"/><path d="M126 184 h40"/><path d="M226 170 h38"/><path d="M322 192 h44"/>
-        <path d="M418 186 h38"/><path d="M510 202 h44"/><path d="M606 190 h40"/><path d="M700 176 h48"/>
-        <path d="M796 200 h44"/><path d="M884 182 h40"/><path d="M78 216 h50"/><path d="M204 224 h42"/>
-        <path d="M360 220 h46"/><path d="M560 222 h40"/><path d="M760 216 h44"/>
-      </g>
+  <rect y="134" width="972" height="116" fill="url(#sea)"/>
+  <line x1="0" y1="134" x2="972" y2="134" stroke="#8fadbe" stroke-width="1.3" opacity=".75"/>
 
-      <!-- smoke -->
-      <g opacity=".9">
-        <path d="M420 88 C412 66 408 44 410 22 L442 22 C442 46 448 66 448 88 Z" fill="url(#smk)"/>
-        <path d="M566 88 C574 66 578 44 576 22 L544 22 C544 46 538 66 538 88 Z" fill="url(#smk)"/>
-      </g>
+  <!-- four piers; the middle two stand either side of the gap -->
+  <rect x="236" y="116" width="18" height="58" fill="#3a352d"/>
+  <rect x="421" y="116" width="18" height="58" fill="#3a352d"/>
+  <rect x="549" y="116" width="18" height="58" fill="#3a352d"/>
+  <rect x="727" y="116" width="18" height="58" fill="#3a352d"/>
 
-      <!-- labels -->
-      <g font-family="DejaVu Sans">
-        <path d="M494 196 V150" stroke="#c9dee9" stroke-width="1.3" opacity=".8"/>
-        <circle cx="494" cy="147" r="2.6" fill="#c9dee9"/>
-        <text x="494" y="212" text-anchor="middle" font-size="13" font-weight="bold" letter-spacing="2.6" fill="#f2ece0">ROAD SPAN LOST</text>
-        <text x="20" y="222" font-size="7.2" letter-spacing="1.4" fill="#a8c2d2">KERCH STRAIT &#183; ELEVATION, NOT TO SCALE</text>
-      </g>
-    </svg>
+  <!-- deck: left span 0-439, gap, right span 549-972 -->
+  <rect x="0" y="106" width="440" height="10" fill="#2a2620"/>
+  <rect x="548" y="106" width="424" height="10" fill="#2a2620"/>
+
+  <!-- torn ends, hanging down into the gap -->
+  <path d="M421 116 L440 116 L446 134 L427 124 Z" fill="#2a2620"/>
+  <path d="M567 116 L548 116 L542 134 L561 124 Z" fill="#2a2620"/>
+
+  <!-- left arch, standing -->
+  <path d="M245 116 Q334 44 430 116" fill="none" stroke="#8d8375" stroke-width="13"/>
+  <g stroke="#8d8375" stroke-width="1.9">
+    <line x1="280" y1="84" x2="280" y2="106"/><line x1="308" y1="66" x2="308" y2="106"/>
+    <line x1="338" y1="59" x2="338" y2="106"/><line x1="368" y1="66" x2="368" y2="106"/>
+    <line x1="396" y1="84" x2="396" y2="106"/>
+  </g>
+
+  <!-- right arch, standing -->
+  <path d="M558 116 Q647 44 743 116" fill="none" stroke="#8d8375" stroke-width="13"/>
+  <g stroke="#8d8375" stroke-width="1.9">
+    <line x1="593" y1="84" x2="593" y2="106"/><line x1="621" y1="66" x2="621" y2="106"/>
+    <line x1="651" y1="59" x2="651" y2="106"/><line x1="681" y1="66" x2="681" y2="106"/>
+    <line x1="709" y1="84" x2="709" y2="106"/>
+  </g>
+
+  <!-- the fallen middle span, broken into three pieces in the water -->
+  <g fill="#2d3942">
+    <path d="M452 150 L492 158 L488 170 L448 161 Z"/>
+    <path d="M496 166 L536 160 L540 171 L500 177 Z"/>
+    <path d="M516 140 L548 146 L544 157 L512 151 Z"/>
+  </g>
+  <g stroke="#7f8d96" stroke-width="2.4" opacity=".9">
+    <line x1="452" y1="150" x2="470" y2="128"/>
+    <line x1="548" y1="146" x2="534" y2="126"/>
+  </g>
+
+  <!-- waterline reasserted over the submerged pieces -->
+  <rect y="134" width="972" height="116" fill="url(#sea)" opacity=".42"/>
+  <line x1="0" y1="134" x2="972" y2="134" stroke="#9dbccc" stroke-width="1.4" opacity=".8"/>
+
+  <!-- impact wake -->
+  <g stroke="#c2d7e2" stroke-width="1.7" opacity=".5" fill="none">
+    <path d="M488 178 q30 7 60 0"/><path d="M480 187 q38 8 76 0"/>
+  </g>
+
+  <!-- smoke from the two torn ends -->
+  <path d="M452 116 c-9 -22 5 -30 1 -52 c18 12 22 30 12 54 Z" fill="#4a423c" opacity=".2"/>
+  <path d="M536 116 c9 -20 -5 -28 -1 -48 c-17 11 -20 28 -10 50 Z" fill="#4a423c" opacity=".2"/>
+
+  <!-- ripples -->
+  <g stroke="#a9c3d4" stroke-width="1.3" opacity=".3">
+    <line x1="76" y1="198" x2="122" y2="198"/><line x1="244" y1="216" x2="288" y2="216"/>
+    <line x1="640" y1="202" x2="684" y2="202"/><line x1="790" y1="224" x2="836" y2="224"/>
+    <line x1="142" y1="236" x2="188" y2="236"/><line x1="700" y1="240" x2="746" y2="240"/>
+  </g>
+
+  <!-- ============ labels, all on the cream sky where contrast is high ============ -->
+  <g font-family="DejaVu Sans" font-weight="bold" font-size="9" letter-spacing="1.2" fill="#17140f">
+    <line x1="338" y1="50" x2="338" y2="30" stroke="#17140f" stroke-width="1"/>
+    <text x="338" y="24" text-anchor="middle">ARCH STANDS</text>
+
+    <line x1="651" y1="50" x2="651" y2="30" stroke="#17140f" stroke-width="1"/>
+    <text x="651" y="24" text-anchor="middle">ARCH STANDS</text>
+
+    <path d="M494 74 L494 96 L508 118" stroke="#17140f" stroke-width="1" fill="none"/>
+    <text x="494" y="68" text-anchor="middle" font-size="10">227 m SPAN DOWN</text>
+
+    <line x1="120" y1="106" x2="120" y2="88" stroke="#17140f" stroke-width="1"/>
+    <text x="120" y="82" text-anchor="middle">APPROACH STANDS</text>
+  </g>
+</svg>
+</div>
+
+  <div class="cap">
+    <b>Above</b> &nbsp;Two arches of the road-and-rail bridge stand; the road span between them lies broken in the strait. Rail traffic resumed on 17 November; road traffic cannot cross.
   </div>
-  <div class="cap">Two arches of the road bridge stand; the span between them lies in the water. Train traffic resumed on 17 November; road traffic cannot cross.</div>
 
   <div class="grid">
-      <div class="b"><div class="tag">Europe &middot; Ukraine</div><div class="bh">Kyiv presses allies for air-defence shipments as strikes widen</div></div>
-      <div class="b"><div class="tag">Europe &middot; EU</div><div class="bh">Sanctions reach 140 more people and entities tied to Moscow</div></div>
-      <div class="b"><div class="tag">Europe &middot; Eurozone</div><div class="bh">Brussels trims its growth forecast to 1.2% for next year</div></div>
-      <div class="b"><div class="tag">Europe &middot; Migration</div><div class="bh">Five EU states sign a return hub deal with Rwanda</div></div>
-      <div class="b"><div class="tag">Europe &middot; Germany</div><div class="bh">Rights groups attack the Rwanda plan as unlawful</div></div>
-      <div class="b"><div class="tag">Europe &middot; Britain</div><div class="bh">Burnham delays his announcement on closer EU ties</div></div>
-      <div class="b"><div class="tag">Europe &middot; France</div><div class="bh">New protests called as the presidential race opens</div></div>
-      <div class="b"><div class="tag">Mid-East &middot; Iran</div><div class="bh">US jets hit an IRGC missile site on Qeshm Island</div></div>
-      <div class="b"><div class="tag">Mid-East &middot; Hormuz</div><div class="bh">Tankers struck in the strait; Iraq gas field on alert</div></div>
-      <div class="b"><div class="tag">America &middot; Washington</div><div class="bh">Trump warns Tehran over a reported &lsquo;dirty bomb&rsquo; plot</div></div>
-      <div class="b"><div class="tag">Mid-East &middot; Yemen</div><div class="bh">Aden&rsquo;s defences reinforced against a Houthi advance</div></div>
-      <div class="b"><div class="tag">Mid-East &middot; West Bank</div><div class="bh">Israeli fire kills a Palestinian woman near Jericho</div></div>
-      <div class="b"><div class="tag">Mid-East &middot; Iraq</div><div class="bh">Baghdad blocks Telegram over security compliance</div></div>
-      <div class="b"><div class="tag">Asia &middot; Taiwan</div><div class="bh">China sends more than 100 ships around the island</div></div>
-      <div class="b"><div class="tag">Asia &middot; Taiwan-US</div><div class="bh">Foreign minister Lin Chia-lung visits Texas</div></div>
-      <div class="b"><div class="tag">Asia &middot; Quad</div><div class="bh">Leaders meet, and a Shenzhen trilateral is set for Thursday</div></div>
-      <div class="b"><div class="tag">Asia &middot; Japan</div><div class="bh">Fighters scrambled after Russian aircraft near Okinoshima</div></div>
-      <div class="b"><div class="tag">Asia &middot; Indonesia</div><div class="bh">A magnitude 6.6 quake shakes the Banda Sea; no tsunami</div></div>
-      <div class="b"><div class="tag">Asia &middot; Philippines</div><div class="bh">Marcos tells ASEAN to turn pledges into deliveries</div></div>
-      <div class="b"><div class="tag">Africa &middot; DR Congo</div><div class="bh">Ebola outbreak passes 11,200 cases and 5,500 deaths</div></div>
-      <div class="b"><div class="tag">Africa &middot; South Africa</div><div class="bh">Two shootings leave 17 dead outside two cities</div></div>
-      <div class="b"><div class="tag">Africa &middot; Guinea</div><div class="bh">A mining crackdown pushes thousands across the Mali border</div></div>
-      <div class="b"><div class="tag">Africa &middot; Kenya</div><div class="bh">Harambee Stars lose 2-1 to Bafana Bafana in Nairobi</div></div>
-      <div class="b"><div class="tag">America &middot; Colombia</div><div class="bh">Hegseth flies in with military equipment and a security pact</div></div>
-      <div class="b"><div class="tag">Africa &middot; South Africa-US</div><div class="bh">Ramaphosa says ties with Washington need mutual respect</div></div>
-      <div class="b"><div class="tag">Markets &middot; Wall Street</div><div class="bh">Nvidia beats forecasts after the closing bell</div></div>
-      <div class="b"><div class="tag">Climate &middot; COP31</div><div class="bh">Rockstr&ouml;m warns the talks are near a tipping point</div></div>
-      <div class="b"><div class="tag">World &middot; Gaza</div><div class="bh">Winter rains destroy shelters rebuilt after the war</div></div>
-      <div class="b"><div class="tag">Mid-East &middot; Gulf</div><div class="bh">US naval strength in the region passes its Iran-war peak</div></div>
-      <div class="b"><div class="tag">Africa &middot; Botswana</div><div class="bh">Botswana and Ivory Coast sign mining and energy deals</div></div>
+    <div class="b"><div class="tag">Europe &middot; EU</div><div class="bh">Sanctions reach 140 more people and firms</div></div>
+    <div class="b"><div class="tag">Europe &middot; Eurozone</div><div class="bh">Brussels cuts next year&rsquo;s growth forecast to 1.2%</div></div>
+    <div class="b"><div class="tag">Europe &middot; Migration</div><div class="bh">Five EU states sign a Rwanda returns hub deal</div></div>
+    <div class="b"><div class="tag">Europe &middot; Germany</div><div class="bh">Rights groups call the Rwanda plan unlawful</div></div>
+    <div class="b"><div class="tag">Europe &middot; Britain</div><div class="bh">Burnham delays his move on closer EU ties</div></div>
+    <div class="b"><div class="tag">Europe &middot; France</div><div class="bh">Protests called as the presidential race opens</div></div>
+    <div class="b"><div class="tag">Mideast &middot; Iran</div><div class="bh">US jets strike an IRGC missile site on Qeshm</div></div>
+    <div class="b"><div class="tag">Mideast &middot; Bahrain</div><div class="bh">Drones hit a US radar site, third time in days</div></div>
+
+    <div class="b"><div class="tag">Mideast &middot; Hormuz</div><div class="bh">Tankers struck in the strait; Iraq gas field on alert</div></div>
+    <div class="b"><div class="tag">Mideast &middot; Washington</div><div class="bh">Trump warns Tehran over a reported dirty-bomb plot</div></div>
+    <div class="b"><div class="tag">Mideast &middot; Gulf</div><div class="bh">US naval strength passes its Iran-war peak</div></div>
+    <div class="b"><div class="tag">Mideast &middot; Yemen</div><div class="bh">Aden&rsquo;s defences reinforced against a Houthi advance</div></div>
+    <div class="b"><div class="tag">Mideast &middot; West Bank</div><div class="bh">Israeli fire kills a Palestinian woman near Jericho</div></div>
+    <div class="b"><div class="tag">Mideast &middot; Gaza</div><div class="bh">Winter rains destroy shelters rebuilt after the war</div></div>
+    <div class="b"><div class="tag">Asia &middot; Taiwan</div><div class="bh">China sends more than 100 ships around the island</div></div>
+    <div class="b"><div class="tag">Asia &middot; Manila</div><div class="bh">Quad leaders meet for the first time in two years</div></div>
+
+    <div class="b"><div class="tag">Asia &middot; Shenzhen</div><div class="bh">Xi, Putin and Trump set a trilateral for Thursday</div></div>
+    <div class="b"><div class="tag">Asia &middot; Japan</div><div class="bh">Fighters scrambled after Russian aircraft near Okinoshima</div></div>
+    <div class="b"><div class="tag">Asia &middot; Indonesia</div><div class="bh">Magnitude 6.6 quake shakes the Banda Sea</div></div>
+    <div class="b"><div class="tag">Asia &middot; Chips</div><div class="bh">Washington blocks remote access to AI chips</div></div>
+    <div class="b"><div class="tag">Africa &middot; DR Congo</div><div class="bh">Ebola passes 11,200 cases and 5,500 deaths</div></div>
+    <div class="b"><div class="tag">Africa &middot; South Africa</div><div class="bh">Two shootings leave 17 dead outside two cities</div></div>
+    <div class="b"><div class="tag">Africa &middot; Guinea</div><div class="bh">A mining crackdown pushes thousands into Mali</div></div>
+    <div class="b"><div class="tag">Africa &middot; Kenya</div><div class="bh">Harambee Stars lose 2-1 to Bafana Bafana</div></div>
+
+    <div class="b"><div class="tag">America &middot; Colombia</div><div class="bh">Hegseth flies in with kit and a security pact</div></div>
+    <div class="b"><div class="tag">America &middot; Washington</div><div class="bh">The White House pulls its FDA nominee</div></div>
+    <div class="b"><div class="tag">Markets &middot; Wall Street</div><div class="bh">Dow falls 850 as the AI trade unwinds</div></div>
+    <div class="b"><div class="tag">Markets &middot; Europe</div><div class="bh">Worst session in eight months; Deutsche Bank slides</div></div>
+    <div class="b"><div class="tag">Markets &middot; Nvidia</div><div class="bh">Chipmaker beats forecasts after the bell</div></div>
+    <div class="b"><div class="tag">Tech &middot; OpenAI</div><div class="bh">GPT-6.2 Astra and Sol ship to ChatGPT</div></div>
+    <div class="b"><div class="tag">Climate &middot; COP31</div><div class="bh">Rockstr&ouml;m warns the talks near a tipping point</div></div>
+    <div class="b"><div class="tag">Oceania &middot; Australia</div><div class="bh">Canberra joins a US-led AI supply-chain pact</div></div>
   </div>
 
-  <div class="foot-rule"></div>
-  <div class="foot"><span>The world on Tuesday 17 November 2026</span><span>Compiled from agency reporting of the day</span></div>
+  <div class="thin"></div>
+  <div class="foot">
+    <div>THE WORLD ON TUESDAY 17 NOVEMBER 2026</div>
+    <div>COMPILED FROM AGENCY REPORTING OF THE DAY</div>
+  </div>
+
 </div>
 </body>
 </html>
