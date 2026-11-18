@@ -10,11 +10,14 @@ An entry in [Sum up 17 November's world news in one image](https://make.fun/c/ne
 
 A single broadsheet front page for Tuesday 17 November 2026, composed as an
 HTML/CSS/SVG sheet and rendered to 1024×1024. It carries the day's lead — the
-Kerch Bridge road arch lost into the strait, with the rail line back the same
-day — as a drawn elevation, and seven more stories in a right rail, a
-three-column tier and a four-line wire strip: drones on Bahrain, the chip-licence
-selloff, COP31's fossil-fuel draft, Ebola in DR Congo, the Quad and the Shenzhen
-trilateral, the South African shootings, and the Nasdaq unwind.
+Kerch Bridge road arch lost into the strait, the rail line back the same day,
+Kyiv's fresh talks in Washington and Europe, and the strike on the capital's
+Dnipro bridges — as a drawn elevation, above a five-column grid of twenty-nine
+further headlines from six continents: the sanctions round and the Rwanda
+returns hub, Iran's drones at Bahrain and the Qeshm strike, the tankers hit in
+Hormuz, Taiwan's encirclement, the Banda Sea quake, the Shenzhen trilateral,
+Ebola in DR Congo, the South African shootings, the AI-trade selloff and
+Nvidia's beat, COP31's tipping-point warning, and winter in Gaza.
 
 ## Run it
 
@@ -35,9 +38,7 @@ re-rendered or edited. It is not read at run time.
 
 - masthead: date, straps, double rule
 - lead: kicker, headline, standfirst, and the bridge elevation with labels
-- rail: four briefs, hairline-separated
-- tier: three illustrated briefs
-- strip: four one-line wires
+- grid: five columns × six rows of tagged one-line headlines
 - footer rule and colophon
 
 Palette: paper `#f3ecdf`, ink `#17140f`, red `#b3241c`, sea `#3d6884`–`#12283a`.
